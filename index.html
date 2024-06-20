@@ -29,6 +29,7 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#principles">Principles</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#design">Design</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#languages">Languages</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#security">Security</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#algorithms">Algorithms</a></li>
                 </ul>
             </div>
@@ -97,8 +98,24 @@
                     <h2 class="mb-5">Domain Driven Design</h2>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">Ubiquitous language</h5>
-                            <p>Talk the same language as the business, reflect the language in the codes domain.</p>
+                            <ul>
+                                <li><strong>Domain</strong>: Represents the sphere of knowledge and activity around a specific business or problem area. It includes the core business logic and rules.</li>
+                                <li><strong>Domain Model</strong>: An abstract model that represents the key entities, their attributes, and the relationships within the domain. Should be understandable by both domain experts and developers.</li>
+                                <li><strong>Ubiquitous Language</strong>: A common language shared by all team members (developers, domain experts, stakeholders). Ensures clear communication and understanding of the domain concepts.</li>
+                                <li><strong>Entities</strong>: Objects with a distinct identity that persists over time and across different states. Examples include Customer, Order, or Product.</li>
+                                <li><strong>Value Objects</strong>: Objects that are defined by their attributes rather than a distinct identity. Immutable and interchangeable if they have the same attributes. Examples include Money, Date, or Address.</li>
+                                <li><strong>Aggregates</strong>: A cluster of entities and value objects that are treated as a single unit for data changes. Have a root entity (aggregate root) that ensures the integrity of the aggregate.</li>
+                                <li><strong>Repositories</strong>: Abstractions for accessing and storing aggregates. Encapsulate the logic for retrieving and persisting entities.</li>
+                                <li><strong>Factories</strong>: Used for creating complex objects and aggregates. Encapsulate the creation logic to ensure the correct and consistent creation of entities.</li>
+                                <li><strong>Services</strong>: Operations or functionalities that do not naturally fit within entities or value objects. Can be domain services (part of the domain model) or application services (part of the application layer).</li>
+                                <li><strong>Bounded Contexts</strong>: Explicit boundaries within which a particular domain model is defined and applicable. Helps to manage complexity by separating different models and contexts.</li>
+                                <li><strong>Context Map</strong>: A high-level view of how different bounded contexts relate to each other. Shows the interactions and dependencies between different parts of the system.</li>
+                                <li><strong>Anti-Corruption Layer (ACL)</strong>: A protective layer that translates between different models or bounded contexts. Ensures that changes in one context do not corrupt another.</li>
+                                <li><strong>Domain Events</strong>: Represent significant occurrences or changes within the domain. Used to communicate changes and trigger actions within or across bounded contexts.</li>
+                                <li><strong>Event Sourcing</strong>: A pattern where state changes are captured as a sequence of events. The current state is reconstructed by replaying these events.</li>
+                                <li><strong>CQRS (Command Query Responsibility Segregation)</strong>: A pattern that separates read and write operations. Commands change the state (write), while queries retrieve data (read).</li>
+                                <li><strong>Modules</strong>: Logical groupings of related concepts within a bounded context. Helps to organize the domain model and manage complexity.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -119,6 +136,70 @@
                         <div class="flex-grow-1">
                             <h5 class="mb-0">Volatile</h5>
                             <p>Double checked locking.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!--Security-->
+            <section class="resume-section" id="security">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Security</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">OAuth 2.0</h5>
+                            <p>OAuth 2.0 is an authorization framework that allows third-party applications to obtain limited access to a user's resources without exposing their credentials. It provides a way for applications to interact with each other on behalf of the user without needing to directly access their password</p>
+                            
+                            <h6 class="mb-0">Key Concepts</h6>
+                            <ul>
+                                <li><strong>Resource Owner</strong>: The user who owns the data and can grant access to it.</li>
+                                <li><strong>Client</strong>: The application requesting access to the user's resources on their behalf.</li>
+                                <li><strong>Resource Server</strong>: The server hosting the protected resources. It verifies the access tokens and serves the requested resources.</li>
+                                <li><strong>Authorization Server</strong>: The server issuing access tokens to the client after authenticating the user and obtaining their authorization.</li>
+                                <li><strong>Authorization Grant</strong>: The method by which the client obtains an access token. There are several types of grants (flows).</li>
+                                <li><strong>Access Token</strong>: A token that the client uses to make authenticated requests on behalf of the resource owner.</li>
+                                <li><strong>Refresh Token</strong>: A token used to obtain a new access token without requiring the user to re-authenticate.</li>
+                            </ul>
+
+                            <h6>Authorization Flow Grants</h6>
+                            <ul>
+                                <li><strong>Authorization Code Grant</strong>
+                                    <ul>
+                                        <li>Used by web and mobile applications to obtain access tokens securely via the backend server.</li>
+                                        <li><i>Advantages:</i> Secure because the access token is not exposed to the user agent and is exchanged server-to-server.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Implicit Grant</strong>
+                                    <ul>
+                                        <li>Used by single-page applications (SPAs) and public clients where the client secret cannot be stored securely.</li>
+                                        <li><i>Advantages:</i> Simpler to implement for clients that run entirely in the user's browser.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Resource Owner Password Credentials Grant</strong>
+                                    <ul>
+                                        <li>Used when the client is highly trusted by the resource owner, such as first-party clients.</li>
+                                        <li><i>Advantages:</i> Direct and straightforward for trusted clients.</li>
+                                        <li><i>Disadvantages:</i> Not recommended for third-party clients due to security concerns of exposing user credentials to the client.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Client Credentials Grant</strong>
+                                    <ul>
+                                        <li>Used for machine-to-machine (M2M) applications where no user is involved.</li>
+                                        <li><i>Advantages:</i> Suitable for server-to-server communication.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        
+                        
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">OpenID Connect (OIDC)</h5>
+                            <p>OIDC is an identity layer built on top of the OAuth 2.0 protocol</p>
                         </div>
                     </div>
                     
