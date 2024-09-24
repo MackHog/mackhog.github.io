@@ -28,9 +28,9 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#principles">Principles</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#design">Design</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#languages">Languages</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#security">Security</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#algorithms">Algorithms</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#random">Random</a></li>
                 </ul>
             </div>
         </nav>
@@ -75,9 +75,38 @@
                     <h2 class="mb-5">Rules</h2>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">Law of demeter (Principle of Least Knowledge)</h5>
-                            <p>Only talk to your immediate friends. Never go two dots down.<br>
-                            Order have a friend in Items but should not beg Items for more info.</p>
+                            <h5 class="mb-0">KISS (Keep It Simple, Stupid)</h5>
+                            <p>Keep code as simple as possible. Avoid complexity unless absolutely necessary.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">DRY (Don’t Repeat Yourself)</h5>
+                            <p>Avoid duplicating code by abstracting repeated functionality.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">YAGNI (You Aren't Gonna Need It)</h5>
+                            <p>Don’t write code for features you don’t currently need.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Separation of Concerns</h5>
+                            <p>Divide a program into distinct sections, each responsible for a single concern or functionality.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Fail Fast</h5>
+                            <p>Make your code fail as early as possible in the case of an error.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Law of Demeter (LoD)</h5>
+                            <p>A module should only communicate with its immediate neighbors (avoid chaining method calls).</p>
                             <pre>if (order.Items.Count > 0)</pre>
                             <p>Should be</p>
                             <pre>if (order.HasItems)</pre>
@@ -85,8 +114,8 @@
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">Keep it simple, stupid (KISS)</h5>
-                            <p>Dont overthink, start simple.</p>
+                            <h5 class="mb-0">Encapsulation</h5>
+                            <p>Hide the internal state of objects and expose only what is necessary.</p>
                         </div>
                     </div>
                 </div>
@@ -112,33 +141,10 @@
                                 <li><strong>Context Map</strong>: A high-level view of how different bounded contexts relate to each other. Shows the interactions and dependencies between different parts of the system.</li>
                                 <li><strong>Anti-Corruption Layer (ACL)</strong>: A protective layer that translates between different models or bounded contexts. Ensures that changes in one context do not corrupt another.</li>
                                 <li><strong>Domain Events</strong>: Represent significant occurrences or changes within the domain. Used to communicate changes and trigger actions within or across bounded contexts.</li>
-                                <li><strong>Event Sourcing</strong>: A pattern where state changes are captured as a sequence of events. The current state is reconstructed by replaying these events.</li>
-                                <li><strong>CQRS (Command Query Responsibility Segregation)</strong>: A pattern that separates read and write operations. Commands change the state (write), while queries retrieve data (read).</li>
                                 <li><strong>Modules</strong>: Logical groupings of related concepts within a bounded context. Helps to organize the domain model and manage complexity.</li>
                             </ul>
                         </div>
                     </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!--Languages-->
-            <section class="resume-section" id="languages">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Database</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                        <div class="flex-grow-1">
-                            <h5 class="mb-0">Sql</h5>
-                            <p>Index scan is bad. Index seek is good.</p>
-                        </div>
-                    </div>
-                    <h2 class="mb-5">C#</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                        <div class="flex-grow-1">
-                            <h5 class="mb-0">Volatile</h5>
-                            <p>Double checked locking.</p>
-                        </div>
-                    </div>
-                    
                 </div>
             </section>
             <hr class="m-0" />
@@ -190,8 +196,6 @@
                                     </ul>
                                 </li>
                             </ul>
-
-                        
                         
                         </div>
                     </div>
@@ -200,6 +204,26 @@
                         <div class="flex-grow-1">
                             <h5 class="mb-0">OpenID Connect (OIDC)</h5>
                             <p>OIDC is an identity layer built on top of the OAuth 2.0 protocol</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Asp.Net Core</h5>
+                            <p>Usually an api has a cookie scheme as the default authenticationSchema with external providers as secondary.</p>
+                            <p>When triggering an ChallengeAsync on the external provider, it will prompt an redirect. After a successfully login the external provider will redirect
+                                the user back to the original api where the api will perform a SignInAsync based on the user recieved from the external provider.
+                                That will create the cookie. 
+                            </p>
+                            <h6 class="mb-0">Key Apis</h6>
+                            <ul>
+                                <li><strong>HttpContext.User</strong>: Represents the current user’s identity and claims.</li>
+                                <li><strong>AuthenticateAsync</strong>: This method is used to validate and authenticate the user's credentials or token, but without enforcing any required login or redirect</li>
+                                <li><strong>ChallengeAsync</strong>: This method is used to enforce authentication. When a challenge is issued, it triggers the authentication system to redirect the user to a login page or prompt them for credentials (depending on the authentication scheme). It is a way to tell the system that the user must be authenticated before proceeding.</li>
+                                
+                                <li><strong>SignInAsync</strong>: Signs in a user, creating an authentication ticket (e.g., generating a cookie or token).</li>
+                                <li><strong>SignOutAsync</strong>: Signs the user out, invalidating the authentication ticket (e.g., deleting the cookie or token).</li>
+                            </ul>
                         </div>
                     </div>
                     
@@ -234,6 +258,27 @@
                             <p>If the input size increases, the algorithm’s running time increases by the square of that size. <pre>foreach in foreach</pre></p>
                         </div>
                     </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!--Random-->
+            <section class="resume-section" id="random">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Database</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Sql</h5>
+                            <p>Index scan is bad. Index seek is good.</p>
+                        </div>
+                    </div>
+                    <h2 class="mb-5">C#</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Volatile</h5>
+                            <p>Double checked locking.</p>
+                        </div>
+                    </div>
+                    
                 </div>
             </section>
             <hr class="m-0" />
