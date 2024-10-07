@@ -167,6 +167,14 @@
                                 <li><strong>Access Token</strong>: A token that the client uses to make authenticated requests on behalf of the resource owner.</li>
                                 <li><strong>Refresh Token</strong>: A token used to obtain a new access token without requiring the user to re-authenticate.</li>
                             </ul>
+							
+							<h6 class="mb-0">Key JWT Claims</h6>
+							<ul>
+                                <li><strong>iss (Issuer)</strong>: The issuer is the entity that created and signed the JWT (authorization server or IdP).</li>
+                                <li><strong>aud (Audience)</strong>: The audience is the intended recipient of the token (API or service that will consume it).</li>
+								<li><strong>sub (Subject)</strong>: Represents the user or entity to which the token refers. It is a unique identifier for the user in the context of the issuer. (Excluded in client credentials flow)</li>
+								<li><strong>scope (Scopes)</strong>: Lists the scopes or permissions associated with the token (what actions the token can perform).</li>
+                            </ul>
 
                             <h6>Authorization Flow Grants</h6>
                             <ul>
