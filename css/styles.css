@@ -10970,3 +10970,38 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+
+/* Code blocks */
+pre {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-left: 0.25rem solid #1d5d92;
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
+pre code {
+  display: block;
+  color: #212529;
+  word-wrap: normal;
+}
+code {
+  padding: 0.15rem 0.35rem;
+  background-color: rgba(76, 139, 190, 0.15);
+  border-radius: 0.25rem;
+}
+a > code {
+  padding: 0;
+  background-color: transparent;
+}
+
+/* Sidebar (navbar) blue theme */
+#sideNav {
+  background-color: #144870 !important;
+}
+#sideNav .navbar-brand .h3,
+#sideNav .navbar-brand .d-block {
+  color: #fff;
+}
+#sideNav .navbar-toggler:focus {
+  outline-color: #4a7ab0;
+}
