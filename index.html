@@ -3,13 +3,15 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+        <meta name="description" content="Security and Identity & Access Management (IAM) cheat sheet" />
+        <meta name="author" content="MackHog" />
         <title>Daily Ketchup</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -17,131 +19,133 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
+        <a class="skip-link visually-hidden-focusable" href="#main-content">Skip to main content</a>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
                 <span class="d-block d-lg-none">Daily Ketchup</span>
-                <h3>Daily Ketchup</h3>
-                <!-- <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="..." /></span> -->
+                <span class="d-none d-lg-block h3 mb-0">Daily Ketchup</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#principles">Principles</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#design">Design</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#iam">IAM</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#security">Security</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#algorithms">Algorithms</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#random">Random</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#cryptography">Cryptography</a></li>
                 </ul>
             </div>
         </nav>
         <!--Page Content-->
-        <div class="container-fluid p-0">
-            <!--Principles-->
-            <section class="resume-section" id="principles">
+        <main id="main-content" class="container-fluid p-0">
+            <!--IAM-->
+            <section class="resume-section" id="iam">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">SOLID</h2>
+                    <h2 class="mb-5">Identity & Access Management</h2>
+                    <p>IAM is the framework of policies, processes, and technologies that ensures the right principals have the right access to the right resources at the right time for the right reasons.</p>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">Single Responsibility Principle (SRP)</h5>
-                            <p>Functionality should be related to a single responsibility (and have only one reason for changing).</p>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                        <div class="flex-grow-1">
-                            <h5 class="mb-0">Open-Close Principle (OCP)</h5>
-                            <p>Software entities such as modules, classes, functions, etc. should be open for extension, but closed for modification.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                        <div class="flex-grow-1">
-                            <h5 class="mb-0">Liskov Substitution Principle (LSP)</h5>
-                            <p>We can successfully replace the object/instance of a parent class with an object/instance of the child class, without affecting the behavior of the base class instance.
-                                (If S is a subtype of T, then objects of type T should be replaced with objects of type S).</p>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                        <div class="flex-grow-1">
-                            <h5 class="mb-0">Interface Segregation Principle (ISP)</h5>
-                            <p>Clients should not be forced to implement any methods they do not use. Rather than one fat interface, numerous little interfaces are preferred.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                        <div class="flex-grow-1">
-                            <h5 class="mb-0">Dependency Inversion Principle (DIP)</h5>
-                            <p>High-level modules/classes should not depend on low-level modules/classes. Instead, both should depend upon abstractions</p>
-                        </div>
-                    </div>
-                    <hr>
-                    <h2 class="mb-5">Rules</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                        <div class="flex-grow-1">
-                            <h5 class="mb-0">KISS (Keep It Simple, Stupid)</h5>
-                            <p>Keep code as simple as possible. Avoid complexity unless absolutely necessary.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                        <div class="flex-grow-1">
-                            <h5 class="mb-0">DRY (Don’t Repeat Yourself)</h5>
-                            <p>Avoid duplicating code by abstracting repeated functionality.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                        <div class="flex-grow-1">
-                            <h5 class="mb-0">YAGNI (You Aren't Gonna Need It)</h5>
-                            <p>Don’t write code for features you don’t currently need.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                        <div class="flex-grow-1">
-                            <h5 class="mb-0">Separation of Concerns</h5>
-                            <p>Divide a program into distinct sections, each responsible for a single concern or functionality.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                        <div class="flex-grow-1">
-                            <h5 class="mb-0">Fail Fast</h5>
-                            <p>Make your code fail as early as possible in the case of an error.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                        <div class="flex-grow-1">
-                            <h5 class="mb-0">Law of Demeter (LoD)</h5>
-                            <p>A module should only communicate with its immediate neighbors (avoid chaining method calls).</p>
-                            <pre>if (order.Items.Count > 0)</pre>
-                            <p>Should be</p>
-                            <pre>if (order.HasItems)</pre>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                        <div class="flex-grow-1">
-                            <h5 class="mb-0">Encapsulation</h5>
-                            <p>Hide the internal state of objects and expose only what is necessary.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!--Design-->
-            <section class="resume-section" id="design">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Domain Driven Design</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Core Concepts</h5>
                             <ul>
-                                <li><strong>Domain</strong>: Represents the sphere of knowledge and activity around a specific business or problem area. It includes the core business logic and rules.</li>
-                                <li><strong>Domain Model</strong>: An abstract model that represents the key entities, their attributes, and the relationships within the domain. Should be understandable by both domain experts and developers.</li>
-                                <li><strong>Ubiquitous Language</strong>: A common language shared by all team members (developers, domain experts, stakeholders). Ensures clear communication and understanding of the domain concepts.</li>
-                                <li><strong>Entities</strong>: Objects with a distinct identity that persists over time and across different states. Examples include Customer, Order, or Product.</li>
-                                <li><strong>Value Objects</strong>: Objects that are defined by their attributes rather than a distinct identity. Immutable and interchangeable if they have the same attributes. Examples include Money, Date, or Address.</li>
-                                <li><strong>Aggregates</strong>: A cluster of entities and value objects that are treated as a single unit for data changes. Have a root entity (aggregate root) that ensures the integrity of the aggregate.</li>
-                                <li><strong>Repositories</strong>: Abstractions for accessing and storing aggregates. Encapsulate the logic for retrieving and persisting entities.</li>
-                                <li><strong>Factories</strong>: Used for creating complex objects and aggregates. Encapsulate the creation logic to ensure the correct and consistent creation of entities.</li>
-                                <li><strong>Services</strong>: Operations or functionalities that do not naturally fit within entities or value objects. Can be domain services (part of the domain model) or application services (part of the application layer).</li>
-                                <li><strong>Bounded Contexts</strong>: Explicit boundaries within which a particular domain model is defined and applicable. Helps to manage complexity by separating different models and contexts.</li>
-                                <li><strong>Context Map</strong>: A high-level view of how different bounded contexts relate to each other. Shows the interactions and dependencies between different parts of the system.</li>
-                                <li><strong>Anti-Corruption Layer (ACL)</strong>: A protective layer that translates between different models or bounded contexts. Ensures that changes in one context do not corrupt another.</li>
-                                <li><strong>Domain Events</strong>: Represent significant occurrences or changes within the domain. Used to communicate changes and trigger actions within or across bounded contexts.</li>
-                                <li><strong>Modules</strong>: Logical groupings of related concepts within a bounded context. Helps to organize the domain model and manage complexity.</li>
+                                <li><strong>Identity</strong>: The digital representation of an entity (user, service, device) that can be authenticated.</li>
+                                <li><strong>Principal</strong>: The actor requesting access — typically a user, machine, or service, backed by an identity.</li>
+                                <li><strong>Authentication (AuthN)</strong>: The process of proving who you are, usually via credentials.</li>
+                                <li><strong>Authorization (AuthZ)</strong>: Determining what an authenticated principal is allowed to do.</li>
+                                <li><strong>Credential</strong>: The secret used to verify an identity (password, API key, certificate, token).</li>
+                                <li><strong>Claim</strong>: A statement about an identity (e.g., role, email, group) carried in tokens to make authorization decisions.</li>
+                                <li><strong>Policy / Entitlement</strong>: The rule or grant that binds a principal to specific actions on specific resources.</li>
+                                <li><strong>Session</strong>: The state maintained once a principal has authenticated, so access checks don't repeat AuthN.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Actors & Entities</h5>
+                            <ul>
+                                <li><strong>Identity Provider (IdP)</strong>: The trusted party that authenticates users and issues tokens/assertions (e.g., Entra ID, Okta, Auth0).</li>
+                                <li><strong>Relying Party (RP) / Service Provider (SP)</strong>: The application that trusts the IdP and consumes identity information to grant access.</li>
+                                <li><strong>Directory</strong>: The authoritative store of identities, groups, and attributes (e.g., Active Directory/Entra ID, LDAP).</li>
+                                <li><strong>Trust Relationship</strong>: The configured agreement that lets an RP rely on an IdP's assertions (federation trust).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Access Models</h5>
+                            <ul>
+                                <li><strong>RBAC (Role-Based Access Control)</strong>: Permissions are assigned to roles, which are then assigned to principals. Simple and coarse-grained; most common model.</li>
+                                <li><strong>ABAC (Attribute-Based Access Control)</strong>: Access decisions are made dynamically using policies evaluated against subject, resource, and context attributes. Fine-grained and flexible.</li>
+                                <li><strong>Federated Identity</strong>: Identities are held and verified by an external identity provider (IdP) and trusted across organizations or domains, enabling SSO.</li>
+                                <li><strong>Discretionary Access Control (DAC)</strong>: The resource owner decides who gets access (e.g., file-level NTFS permissions).</li>
+                                <li><strong>Mandatory Access Control (MAC)</strong>: Access is governed by system-wide security labels that principals cannot override.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Token Strategies</h5>
+                            <ul>
+                                <li><strong>Opaque tokens</strong>: Validated via introspection; easy to revoke immediately. Good for high-security, short-lived, centralized scenarios.</li>
+                                <li><strong>JWT</strong>: Self-contained and verifiable offline; good for distributed decoupled microservices.</li>
+                                <li><strong>Trade-off</strong>: JWTs cannot be revoked easily until expiry — shorten lifetime or use a revocation/denylist for sensitive operations.</li>
+                                <li><strong>Bearer token risk</strong>: Treat tokens as secrets; minimize their exposure surface (client storage, logs, referrers).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Policies & Practices</h5>
+                            <ul>
+                                <li><strong>Least Privilege</strong>: Grant principals only the minimum permissions required to perform their function.</li>
+                                <li><strong>Defense in Depth</strong>: Layer multiple independent security controls so that no single failure compromises access.</li>
+                                <li><strong>Separation of Duties</strong>: Fragile or sensitive actions require two or more principals to prevent abuse of power.</li>
+                                <li><strong>Zero Trust</strong>: Never trust, always verify — verify explicitly, grant least access, and assume breach with continuous verification.</li>
+                                <li><strong>Conditional Access</strong>: Evaluate context (device posture, location, sign-in risk) before granting access instead of trusting the credential alone.</li>
+                                <li><strong>Identity Lifecycle</strong>: Provision, manage, and deprovision identities as people join, change, and leave the organization.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Privileged Access</h5>
+                            <ul>
+                                <li><strong>Privileged Access Management (PAM)</strong>: Special controls and workflows around high-privilege accounts (brokering, just-in-time access).</li>
+                                <li><strong>Just-in-Time (JIT) access</strong>: Elevate privileges on demand for a limited duration, then automatically revoke.</li>
+                                <li><strong>Break-glass accounts</strong>: Emergency high-privilege accounts held for crises; require strict controls, monitoring, and approval on use.</li>
+                                <li><strong>Standing access vs JIT</strong>: Prefer time-bound, approved elevation over permanent high-privilege assignments.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Permission Evaluation</h5>
+                            <ul>
+                                <li><strong>Deny overrides allow</strong>: An explicit deny always wins over any allow — enforce this when combining policies.</li>
+                                <li><strong>Effective permissions</strong>: The final access decision is the result of merging all applicable policies from identity-based and resource-based grants.</li>
+                                <li><strong>Evaluation order</strong>: Union all allows, subtract explicit denys, then apply any restrictions (conditions, scopes).</li>
+                                <li><strong>Ownership</strong>: Resource owners can often delegate access within their owned scope (DAC behavior layered on RBAC).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Identity Governance</h5>
+                            <ul>
+                                <li><strong>Access reviews</strong>: Periodically recertify that principals still need their granted access.</li>
+                                <li><strong>Attestation</strong>: Formal sign-off that access assignments are correct and compliant.</li>
+                                <li><strong>Entitlements</strong>: The catalog of manageable access packages (group membership, roles, apps) a user can be granted.</li>
+                                <li><strong>Deprovisioning</strong>: Remove access promptly on offboarding or role change to close orphaned-account risks.</li>
+                                <li><strong>Audit log</strong>: Record who accessed what and when for forensics, compliance, and anomaly detection.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Common Technologies</h5>
+                            <ul>
+                                <li><strong>SSO (Single Sign-On)</strong>: A single authentication grants access to multiple applications without re-authenticating.</li>
+                                <li><strong>MFA (Multi-Factor Authentication)</strong>: Requires two or more factors (something you know, have, or are) to verify identity.</li>
+                                <li><strong>SCIM (System for Cross-domain Identity Management)</strong>: Standard protocol for automating identity provisioning and deprovisioning between systems.</li>
+                                <li><strong>SAML / OIDC / JWT</strong>: Assertion and token formats used to carry identity and authorization data between parties.</li>
+                                <li><strong>Passwordless</strong>: Authentication using passkeys, FIDO2/WebAuthn, or one-time codes instead of static passwords.</li>
                             </ul>
                         </div>
                     </div>
@@ -156,7 +160,7 @@
                         <div class="flex-grow-1">
                             <h5 class="mb-0">OAuth 2.0</h5>
                             <p>OAuth 2.0 is an authorization framework that allows third-party applications to obtain limited access to a user's resources without exposing their credentials. It provides a way for applications to interact with each other on behalf of the user without needing to directly access their password</p>
-                            
+
                             <h6 class="mb-0">Key Concepts</h6>
                             <ul>
                                 <li><strong>Resource Owner</strong>: The user who owns the data and can grant access to it.</li>
@@ -167,27 +171,27 @@
                                 <li><strong>Access Token</strong>: A token that the client uses to make authenticated requests on behalf of the resource owner.</li>
                                 <li><strong>Refresh Token</strong>: A token used to obtain a new access token without requiring the user to re-authenticate.</li>
                             </ul>
-							
-							<h6 class="mb-0">Key JWT Claims</h6>
-							<ul>
+
+                            <h6 class="mb-0">Key JWT Claims</h6>
+                            <ul>
                                 <li><strong>iss (Issuer)</strong>: The issuer is the entity that created and signed the JWT (authorization server or IdP).</li>
                                 <li><strong>aud (Audience)</strong>: The audience is the intended recipient of the token (API or service that will consume it).</li>
-								<li><strong>sub (Subject)</strong>: Represents the user or entity to which the token refers. It is a unique identifier for the user in the context of the issuer. (Excluded in client credentials flow)</li>
-								<li><strong>scope (Scopes)</strong>: Lists the scopes or permissions associated with the token (what actions the token can perform).</li>
+                                <li><strong>sub (Subject)</strong>: Represents the user or entity to which the token refers. It is a unique identifier for the user in the context of the issuer. (Excluded in client credentials flow)</li>
+                                <li><strong>scope (Scopes)</strong>: Lists the scopes or permissions associated with the token (what actions the token can perform).</li>
                             </ul>
 
-                            <h6>Authorization Flow Grants</h6>
+                            <h6 class="mb-0">Authorization Flow Grants</h6>
                             <ul>
-                                <li><strong>Authorization Code Grant</strong>
+                                <li><strong>Authorization Code Grant (+ PKCE)</strong>
                                     <ul>
-                                        <li>Used by web and mobile applications to obtain access tokens securely via the backend server.</li>
+                                        <li>Used by web and mobile applications to obtain access tokens securely via the backend server. PKCE is required for public clients (SPAs, mobile).</li>
                                         <li><i>Advantages:</i> Secure because the access token is not exposed to the user agent and is exchanged server-to-server.</li>
                                     </ul>
                                 </li>
-                                <li><strong>Implicit Grant</strong>
+                                <li><strong>Implicit Grant (deprecated)</strong>
                                     <ul>
-                                        <li>Used by single-page applications (SPAs) and public clients where the client secret cannot be stored securely.</li>
-                                        <li><i>Advantages:</i> Simpler to implement for clients that run entirely in the user's browser.</li>
+                                        <li>Previously used by SPAs and public clients; the access token was returned directly in the redirect. Now superseded by Authorization Code + PKCE.</li>
+                                        <li><i>Disadvantages:</i> Token exposed in URL/history; vulnerable to interception. Do not use for new implementations.</li>
                                     </ul>
                                 </li>
                                 <li><strong>Resource Owner Password Credentials Grant</strong>
@@ -204,14 +208,75 @@
                                     </ul>
                                 </li>
                             </ul>
-                        
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">PKCE (Proof Key for Code Exchange)</h5>
+                            <p>An extension to the Authorization Code Grant that protects public clients (SPAs, mobile apps) against authorization code interception.</p>
+                            <ul>
+                                <li><strong>code_verifier</strong>: A high-entropy random string generated by the client and kept secret on the client.</li>
+                                <li><strong>code_challenge</strong>: A transformed version of the code_verifier sent with the authorization request. Usually the SHA-256 hash (method <code>S256</code>).</li>
+                                <li><strong>Verification</strong>: At the token endpoint the client sends the code_verifier, and the authorization server checks it against the code_challenge before issuing tokens.</li>
+                            </ul>
                         </div>
                     </div>
 
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
                         <div class="flex-grow-1">
                             <h5 class="mb-0">OpenID Connect (OIDC)</h5>
-                            <p>OIDC is an identity layer built on top of the OAuth 2.0 protocol</p>
+                            <p>OIDC is an identity layer built on top of the OAuth 2.0 protocol. It adds authentication on top of the authorization, allowing clients to verify the identity of the user via an ID Token while also obtaining basic profile information.</p>
+                            <h6 class="mb-0">Key Concepts</h6>
+                            <ul>
+                                <li><strong>ID Token</strong>: A JWT issued by the authorization server that contains claims about the authenticated user (such as sub, name, and email). It is the core addition of OIDC over plain OAuth 2.0.</li>
+                                <li><strong>UserInfo Endpoint</strong>: A protected endpoint the client can call with an access token to retrieve additional claims about the user.</li>
+                                <li><strong>Discovery Endpoint</strong>: A well-known URL (<code>.well-known/openid-configuration</code>) that exposes the authorization server's metadata, scopes, and endpoints.</li>
+                            </ul>
+                            <h6 class="mb-0">Claims</h6>
+                            <ul>
+                                <li><strong>id_token</strong>: The signed JWT representing the authentication result and user claims.</li>
+                                <li><strong>openid</strong>: The required scope for an OIDC request; signals the client intends to authenticate the user.</li>
+                                <li><strong>profile / email / phone</strong>: Optional scopes that grant access to additional user claims via the UserInfo endpoint.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Token Types</h5>
+                            <ul>
+                                <li><strong>Structured tokens (JWT)</strong>: Self-contained, verifiable offline via signature; carry claims. Good for distributed APIs, but harder to revoke before expiry.</li>
+                                <li><strong>Opaque/reference tokens</strong>: Random strings with no meaning by themselves; validated server-side by the authorization server.</li>
+                                <li><strong>Introspection Endpoint (RFC 7662)</strong>: Used by a resource server to validate an opaque token and retrieve its metadata (active, scope, client_id).</li>
+                                <li><strong>Bearer tokens</strong>: Whoever holds the token can use it. Must be protected in transit (TLS) and at rest; consider short lifetimes and rotation.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Token Validation</h5>
+                            <ul>
+                                <li><strong>Signature</strong>: Always verify the token signature against the issuer's keys before trusting any claim.</li>
+                                <li><strong>exp (Expiration)</strong>: The token is invalid after this timestamp. Always enforce it.</li>
+                                <li><strong>nbf (Not Before)</strong>: The token is not valid before this timestamp.</li>
+                                <li><strong>iat (Issued At)</strong>: When the token was issued; reject tokens issued too long ago / in the future.</li>
+                                <li><strong>iss & aud</strong>: Validate the issuer matches the expected IdP and the audience matches your client/resource.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">JWT Security</h5>
+                            <ul>
+                                <li><strong>Algorithm confusion</strong>: Never accept tokens signed with an algorithm you did not expect. RS256/ES256 use public/private keys; HS256 uses a shared secret — confusing them lets attackers forge tokens.</li>
+                                <li><strong>Reject alg=none</strong>: Do not accept unsigned tokens or a downgrade to <code>none</code>.</li>
+                                <li><strong>Short lifetimes</strong>: Issue short-lived tokens and rely on refresh token rotation instead of long expirations.</li>
+                                <li><strong>Rotation</strong>: Rotate refresh tokens on each use; detect if an old rotatee is replayed (potential theft).</li>
+                                <li><strong>Don't put secrets in tokens</strong>: JWTs are base64, not encrypted by default — do not store sensitive data unless using JWE.</li>
+                            </ul>
                         </div>
                     </div>
 
@@ -220,80 +285,292 @@
                             <h5 class="mb-0">Asp.Net Core</h5>
                             <p>Usually an api has a cookie scheme as the default authenticationSchema with external providers as secondary.</p>
                             <p>When triggering an ChallengeAsync on the external provider, it will prompt an redirect. After a successfully login the external provider will redirect
-                                the user back to the original api where the api will perform a SignInAsync based on the user recieved from the external provider.
-                                That will create the cookie. 
+                                the user back to the original api where the api will perform a SignInAsync based on the user received from the external provider.
+                                That will create the cookie.
                             </p>
                             <h6 class="mb-0">Key Apis</h6>
                             <ul>
                                 <li><strong>HttpContext.User</strong>: Represents the current user’s identity and claims.</li>
                                 <li><strong>AuthenticateAsync</strong>: This method is used to validate and authenticate the user's credentials or token, but without enforcing any required login or redirect</li>
                                 <li><strong>ChallengeAsync</strong>: This method is used to enforce authentication. When a challenge is issued, it triggers the authentication system to redirect the user to a login page or prompt them for credentials (depending on the authentication scheme). It is a way to tell the system that the user must be authenticated before proceeding.</li>
-                                
                                 <li><strong>SignInAsync</strong>: Signs in a user, creating an authentication ticket (e.g., generating a cookie or token).</li>
                                 <li><strong>SignOutAsync</strong>: Signs the user out, invalidating the authentication ticket (e.g., deleting the cookie or token).</li>
                             </ul>
                         </div>
                     </div>
-                    
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Common Web Attacks</h5>
+                            <ul>
+                                <li><strong>CSRF (Cross-Site Request Forgery)</strong>: Attacker tricks a user's browser into making authenticated requests. Mitigate with anti-forgery tokens and SameSite cookies.</li>
+                                <li><strong>XSS (Cross-Site Scripting)</strong>: Attacker injects scripts executed in the victim's browser. Mitigate with output encoding and CSP.</li>
+                                <li><strong>SQL Injection</strong>: Malicious SQL embedded in input. Mitigate with parameterized queries, never string concatenation.</li>
+                                <li><strong>SSRF (Server-Side Request Forgery)</strong>: Attacker makes the server fetch arbitrary URLs. Mitigate by whitelisting destinations and validating URLs.</li>
+                                <li><strong>Open Redirect</strong>: Attackers abuse lax redirect_uri validation to redirect users to phishing sites. Always validate redirect_uri against a registered allowlist.</li>
+                                <li><strong>Token replay/theft</strong>: Stolen access tokens replayed to the API. Mitigate with short lifetimes, TLS, and refresh token rotation.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Defensive Controls</h5>
+                            <ul>
+                                <li><strong>Security headers</strong>: Content-Security-Policy (CSP), HTTP Strict Transport Security (HSTS), X-Frame-Options, X-Content-Type-Options.</li>
+                                <li><strong>Cookie flags</strong>: HttpOnly (no JS access), Secure (HTTPS only), SameSite (mitigates CSRF).</li>
+                                <li><strong>CORS</strong>: Restrict allowed origins to known domains; never use the wildcard with credentials.</li>
+                                <li><strong>Rate limiting</strong>: Protect login and token endpoints against brute-force and credential-stuffing attacks.</li>
+                                <li><strong>TLS</strong>: Encrypt all traffic in transit (HTTPS). Never send tokens or credentials over plain HTTP.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">Passwords & Secrets</h5>
+                            <ul>
+                                <li><strong>Hashing</strong>: Store password hashes only, using adaptive algorithms: Argon2id, scrypt, bcrypt, PBKDF2. Never plaintext or reversible hashes (MD5/SHA1).</li>
+                                <li><strong>Salting</strong>: Use a unique random salt (or the algorithm's built-in salt) per password to defeat rainbow tables.</li>
+                                <li><strong>Secrets management</strong>: Keep client secrets, keys, and connection strings out of source code; use a vault (e.g., Azure Key Vault, HashiCorp Vault) and rotate on a schedule.</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
             </section>
             <hr class="m-0" />
-            <!--Algorithms-->
-            <section class="resume-section" id="algorithms">
+            <!--Cryptography-->
+            <section class="resume-section" id="cryptography">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">Big O notation</h2>
+                    <h2 class="mb-5">Cryptography</h2>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">O(1) - Constant Time Complexity</h5>
-                            <p>Same speed independet of number of element. <pre>array.indexOf</pre></p>
+                            <h5 class="mb-0">JWT Structure</h5>
+                            <p>A JWT is three base64url-encoded segments separated by dots: <code>header.payload.signature</code>.</p>
+                            <ul>
+                                <li><strong>Header</strong>: Metadata, e.g. <code>{"alg":"RS256","typ":"JWT","kid":"key-1"}</code>. The <code>kid</code> tells verifiers which key to fetch for validation.</li>
+                                <li><strong>Payload</strong>: The claims. Base64url-encoded, <strong>not encrypted</strong> — anyone can read it. Treat contents as public information.</li>
+                                <li><strong>Signature</strong>: Cryptographically binds the header and payload so tampering can be detected.</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">O(log n) - Logarithmic Time Complexity</h5>
-                            <p>Execution time increases logarithmically with the size of the input. <pre>binary search</pre></p>
+                            <h5 class="mb-0">JWS (JSON Web Signature)</h5>
+                            <p>Signing provides <strong>integrity and authenticity</strong>, not confidentiality. A recipient can verify the claims came from the signer and were not altered.</p>
+                            <ul>
+                                <li><strong>HMAC (e.g. HS256)</strong>: Symmetric — the same shared secret signs and verifies. Simple, but the secret must be guarded by every verifier.</li>
+                                <li><strong>Asymmetric (e.g. RS256, ES256)</strong>: The private key signs, the public key verifies. Preferred for distributed systems and public clients.</li>
+                                <li><strong>Signing input</strong>: Always the exact string <code>base64url(header) + "." + base64url(payload)</code>.</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">O(n) - Linear Time Complexity</h5>
-                            <p>Increases proportionally to the size of the input (n = number of elements). <pre>foreach</pre></p>
+                            <h5 class="mb-0">JWS Code Sample (C#)</h5>
+                            <p>Signing a JWT with RSA-SHA256 (RS256) using the .NET standard library:</p>
+                            <pre><code class="lang-csharp">using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Security.Cryptography;
+using Microsoft.IdentityModel.Tokens;
+
+using var rsa = RSA.Create(2048);
+var privateKey = new RsaSecurityKey(rsa);
+var signingCredentials =
+    new SigningCredentials(privateKey, SecurityAlgorithms.RsaSha256);
+
+var token = new JwtSecurityToken(
+    issuer: "https://auth.example.com",
+    audience: "api.example.com",
+    claims: new[]
+    {
+        new Claim(JwtRegisteredClaimNames.Sub, "user-42"),
+        new Claim("role", "admin")
+    },
+    notBefore: DateTime.UtcNow,
+    expires: DateTime.UtcNow.AddMinutes(15),
+    signingCredentials: signingCredentials);
+
+var handler = new JwtSecurityTokenHandler();
+string jwt = handler.WriteToken(token);
+Console.WriteLine(jwt); // header.payload.signature</code></pre>
+                            <p>Verifying the signature and validating the standard claims:</p>
+                            <pre><code class="lang-csharp">using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+
+var publicKey = new RsaSecurityKey(rsa); // public part of the same key
+var parameters = new TokenValidationParameters
+{
+    ValidateIssuer = true,
+    ValidIssuer = "https://auth.example.com",
+    ValidateAudience = true,
+    ValidAudience = "api.example.com",
+    ValidateLifetime = true, // enforces exp / nbf
+    ValidateIssuerSigningKey = true,
+    IssuerSigningKey = publicKey
+};
+
+var principal = new JwtSecurityTokenHandler()
+    .ValidateToken(jwt, parameters, out _);
+Console.WriteLine(principal.Identity?.IsAuthenticated); // True</code></pre>
+                            <p>Note: verifying with the private key (or with HS256 and someone else's secret) would be a security flaw — always verify with the expected public key.</p>
                         </div>
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">O(n²) - Quadratic Time Complexity</h5>
-                            <p>If the input size increases, the algorithm’s running time increases by the square of that size. <pre>foreach in foreach</pre></p>
+                            <h5 class="mb-0">JWE (JSON Web Encryption)</h5>
+                            <p>JWE adds <strong>confidentiality</strong> on top of signing: the payload is encrypted and unreadable without the recipient's key.</p>
+                            <ul>
+                                <li><strong>Content Encryption Key (CEK)</strong>: A random symmetric key that encrypts the payload (e.g. <code>A256GCM</code>, <code>A128CBC-HS256</code>).</li>
+                                <li><strong>Key management</strong>: The CEK is wrapped with the recipient's public key (<code>alg: RSA-OAEP</code>) or derived from a shared secret (<code>alg: dir</code>).</li>
+                                <li><strong>Header</strong>: Carries <code>alg</code> and <code>enc</code>, e.g. <code>{"alg":"RSA-OAEP-256","enc":"A256GCM"}</code>.</li>
+                                <li><strong>When to use JWE</strong>: Only for sensitive claim content (PII, internal identifiers). For typical authorization, JWS is enough — encryption adds complexity and prevents some audiences from reading claims.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">JWE Code Sample (C#)</h5>
+                            <p>Encrypting the claims payload with RSA-OAEP-256 / A256GCM:</p>
+                            <pre><code class="lang-csharp">using System.Security.Cryptography;
+using Microsoft.IdentityModel.Tokens;
+
+var recipientPublicKey = new RsaSecurityKey(rsa); // recipient's key
+var encryptedCreds = new EncryptingCredentials(
+    recipientPublicKey,
+    SecurityAlgorithms.RsaOaepKeyWrap,
+    SecurityAlgorithms.Aes256Gcm);
+
+var token = new JwtSecurityToken(
+    issuer: "https://auth.example.com",
+    audience: "api.example.com",
+    claims: new[]
+    {
+        new Claim("email", "user@example.com"),     // now confidential
+        new Claim("ssn", "123-45-6789")
+    },
+    expires: DateTime.UtcNow.AddMinutes(15),
+    signingCredentials: signingCredentials,        // JWS layer
+    encryptingCredentials: encryptedCreds);        // JWE layer (Nested JWT)
+
+string jwt = new JwtSecurityTokenHandler().WriteToken(token);
+Console.WriteLine(jwt); // encrypted: header.encKey.iv.ciphertext.tag</code></pre>
+                            <p>Decrypting with the recipient's private key and validating claims:</p>
+                            <pre><code class="lang-csharp">using Microsoft.IdentityModel.Tokens;
+
+var recipientPrivateKey = new RsaSecurityKey(rsa); // recipient's private key
+var parameters = new TokenValidationParameters
+{
+    ValidateIssuer = true,
+    ValidIssuer = "https://auth.example.com",
+    ValidateAudience = true,
+    ValidAudience = "api.example.com",
+    ValidateLifetime = true,
+    IssuerSigningKey = new RsaSecurityKey(rsa),      // for the inner JWS
+    TokenDecryptionKey = recipientPrivateKey,        // for the JWE layer
+    ValidateIssuerSigningKey = true
+};
+
+var principal = new JwtSecurityTokenHandler()
+    .ValidateToken(jwt, parameters, out SecureToken validated);
+Console.WriteLine(((JwtSecurityToken)validated).Claims);</code></pre>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">SAML2 Assertion & XML Signature</h5>
+                            <p>A SAML2 <code>&lt;saml:Assertion&gt;</code> is signed by wrapping it in an XML Signature (<code>ds:Signature</code>) per XMLDSig. The assertion text itself is not encrypted by default — it is <strong>signed</strong> for authenticity and integrity.</p>
+                            <ul>
+                                <li><strong>SignedInfo</strong>: The part that gets signed. Contains <code>CanonicalizationMethod</code> (c14n), <code>SignatureMethod</code> (usually <code>RSA-SHA256</code>), and one or more <code>Reference</code> entries.</li>
+                                <li><strong>Reference</strong>: Points at the signed element (e.g. <code>#assertion-id</code>) and carries <code>DigestMethod</code> (SHA-256) plus <code>DigestValue</code> — a hash of the canonicalized assertion content.</li>
+                                <li><strong>KeyInfo</strong>: Usually embeds the signer's X.509 certificate so the relying party can bind it to a trusted trust anchor.</li>
+                                <li><strong>Verification flow</strong>: (1) re-canonicalize <code>SignedInfo</code>, (2) verify the signature in <code>SignatureValue</code> against it with the signer's public key, (3) re-canonicalize and digest the referenced assertion, (4) confirm it matches <code>DigestValue</code>.</li>
+                                <li><strong>Canonicalization matters</strong>: Any whitespace or attribute-order change alters the digest — both sides must canonicalize identically (C14N).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">SAML2 Code Sample (C#)</h5>
+                            <p>Signing an XML assertion with RSA-SHA256 using <code>SignedXml</code>:</p>
+                            <pre><code class="lang-csharp">using System.Security.Cryptography;
+using System.Security.Cryptography.Xml;
+using System.Xml;
+
+var assertion = new XmlDocument { PreserveWhitespace = false };
+assertion.LoadXml("""
+&lt;saml:Assertion xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"
+                ID="assertion-id" IssueInstant="2026-09-08T12:00:00Z"&gt;
+  &lt;saml:Issuer&gt;https://idp.example.com&lt;/saml:Issuer&gt;
+  &lt;saml:Subject&gt;
+    &lt;saml:NameID&gt;alice@example.com&lt;/saml:NameID&gt;
+  &lt;/saml:Subject&gt;
+  &lt;saml:AuthnStatement AuthnInstant="2026-09-08T12:00:00Z"&gt;
+    &lt;saml:AuthnContext&gt;
+      &lt;saml:AuthnContextClassRef&gt;urn:oasis:names:tc:SAML:2.0:ac:classes:Password
+      &lt;/saml:AuthnContextClassRef&gt;
+    &lt;/saml:AuthnContext&gt;
+  &lt;/saml:AuthnStatement&gt;
+&lt;/saml:Assertion&gt;
+""");
+
+var signedXml = new SignedXml(assertion);
+using var rsa = RSA.Create(2048);
+signedXml.SigningKey = rsa;
+signedXml.SignedInfo.CanonicalizationMethod =
+    SignedXml.XmlDsigCanonicalizationUrl;                            // c14n
+signedXml.SignedInfo.SignatureMethod =
+    SignedXml.XmlDsigRSASHA256Url;                                   // RSA-SHA256
+
+var reference = new Reference("#assertion-id");                       // -> Reference node
+reference.DigestMethod =
+    SecurityAlgorithms.Sha256Digest;                                 // DigestMethod
+reference.AddTransform(new XmlDsigC14NTransform());                  // canonicalize before hashing
+signedXml.AddReference(reference);
+
+var keyInfo = new KeyInfo();                                          // KeyInfo -> certificate
+keyInfo.AddClause(new KeyInfoX509Data(certificate));
+signedXml.KeyInfo = keyInfo;
+
+signedXml.ComputeSignature();
+var signature = signedXml.GetXml();
+
+var s = assertion.DocumentElement!;
+s.AppendChild(assertion.ImportNode(signature, true));                 // ds:Signature child</code></pre>
+                            <p>Verifying the signature and digest of a received assertion:</p>
+                            <pre><code class="lang-csharp">using System.Security.Cryptography.Xml;
+using System.Xml;
+
+var received = new XmlDocument { PreserveWhitespace = false };
+received.LoadXml(signedXmlText);
+
+var ns = new XmlNamespaceManager(received.NameTable);
+ns.AddNamespace("ds", "http://www.w3.org/2000/09/xmldsig#");
+var sigNode = received.SelectSingleNode("//ds:Signature", ns)!;
+
+var signedXml = new SignedXml(received);
+signedXml.LoadXml((XmlElement)sigNode);
+
+bool sigValid = signedXml.CheckSignature(rsa);          // 1+2: re-canonicalize SignedInfo,
+                                                        // verify SignatureValue
+Console.WriteLine($"Signature valid: {sigValid}");
+
+foreach (Reference reference in signedXml.SignedInfo.References)
+{
+    bool digest = reference.CheckDigest();               // 3+4: digest of signed content
+    Console.WriteLine($"Digest for {reference.Uri}: {digest}");
+}</code></pre>
+                            <p>In production, the public key comes from the trusted IdP's certificate (from <code>KeyInfo</code> or a pre-shared metadata document), not from within the message itself.</p>
                         </div>
                     </div>
                 </div>
             </section>
             <hr class="m-0" />
-            <!--Random-->
-            <section class="resume-section" id="random">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Database</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                        <div class="flex-grow-1">
-                            <h5 class="mb-0">Sql</h5>
-                            <p>Index scan is bad. Index seek is good.</p>
-                        </div>
-                    </div>
-                    <h2 class="mb-5">C#</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                        <div class="flex-grow-1">
-                            <h5 class="mb-0">Volatile</h5>
-                            <p>Double checked locking.</p>
-                        </div>
-                    </div>
-                    
-                </div>
-            </section>
-            <hr class="m-0" />
-        </div>
+        </main>
         <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script defer src="js/scripts.js"></script>
     </body>
 </html>
